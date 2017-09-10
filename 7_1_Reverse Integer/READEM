@@ -1,0 +1,18 @@
+题目:
+Reverse digits of an integer.
+
+Example1: x = 123, return 321
+Example2: x = -123, return -321 
+
+The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows. 
+（假设输入的是32位以内大小的数字，当他们的逆数字超过32位大小范围即溢出时，返回0）
+
+32位的大小范围为：        最大值为2147483647         最小值为-2147483648
+
+一开始我自己的思路是：用求余法将每一位提炼出来放在数组中，然后在用每一位乘以对应的10的几次方，相加得到sum结果。这样做很笨，需要多次遍历。
+后来看了资料发现，可以一次遍历就求出结果。用sum = sum*10 + n;的方法，采用每次都在原来基础上乘一个10，而不是一次到位的10的几次方。这样非常简便。
+
+我掉的坑：
+1.我不清楚32位应该怎么表示出来，查资料，可以直接用INT_MAX,INT_MIN表示；
+2.一开始读题不仔细，后来发现要求 逆数字 如果溢出返回0；
+3.在编写程序时，判断是否溢出处，应该使用INT_MAX/10和INT_MIN/10;因为*10的操作在此操作后面。
