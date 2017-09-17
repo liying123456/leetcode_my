@@ -1,0 +1,11 @@
+题目：Determine whether an integer is a palindrome. Do this without extra space.
+判断一个数字是不是回文，不用额外的空间
+
+这个方法是leetcode讨论区的经典方法，时间复杂度很低，
+它的核心思想是，利用翻转数字的思想，用一个数newnum逐步构造一个新的数字，若x为12345，则newnum和x的变化为：
+0    12345
+5    1234
+54   123
+543  12
+
+最后根据情况判断是不是回文。
